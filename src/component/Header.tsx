@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
-import { MenuItems } from '../types/menutpes'
+import { MenuItems } from '../types/menutpes';
+import LawLogo from "../assets/images/lawLogo.png";
 
 const Header = () => {
   const menuItems: MenuItems[] = [
@@ -25,7 +26,7 @@ const Header = () => {
     <>
       <Navbar className="navbarContainer" expand="lg" sticky="top" bg="light">
         <Container fluid="xxl">
-          <Navbar.Brand><h3 className='fst-italic'>Logo</h3></Navbar.Brand>
+          <Navbar.Brand><h3 className='fst-italic'>Joshi Law Office <img src={LawLogo} style={{width: 46}} alt="Law" /></h3></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto"> {/* To center the menu items, use mx-auto */}
