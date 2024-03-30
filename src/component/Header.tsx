@@ -31,13 +31,13 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto"> {/* To center the menu items, use mx-auto */}
               {menuItems.map((menuItem, index) => (
-                <Nav.Link key={index} href={menuItem.url}>
+                <Nav.Link key={index} href={menuItem.url} className='text-dark fs-5'>
                   {menuItem.title}
                 </Nav.Link>
               ))}
             </Nav>
             <a href="/login">
-              <Button className='rounded-pill btn btn-dark px-4'>
+              <Button className='rounded-pill btn btn-dark px-4 shadow-lg'>
                 Login
               </Button>
             </a>

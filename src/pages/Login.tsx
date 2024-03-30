@@ -38,7 +38,7 @@ const Login = () => {
       <div className='p-5'>
         <div className='pb-3 d-flex justify-content-end'>
           <a href="/">
-            <Button className='rounded-pill btn btn-dark px-4'>
+            <Button className='rounded-pill btn btn-dark px-4 shadow-lg'>
               Back
             </Button>
           </a>
@@ -96,7 +96,7 @@ const Login = () => {
                   </Row>
                   <Row className='p-2'>
                     <Col md={12} className='d-flex justify-content-center'>
-                      <Button type='submit' className='rounded-pill btn-primary px-4 w-100'>
+                      <Button type='submit' className='rounded-pill btn-primary px-4 w-100 shadow-lg'>
                         Login
                       </Button>
                     </Col>

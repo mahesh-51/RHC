@@ -2,7 +2,20 @@ import React from 'react'
 
 const AboutUs = () => {
   return (
-    <div className='min-vh-100'>AboutUs</div>
+    <>
+      <section className='min-vh-100 background-color-1'>
+        <div></div>
+      </section>
+      <section className='min-vh-100 background-color-2'>
+        <div></div>
+      </section>
+      <section className='min-vh-100 background-color-1'>
+        <div></div>
+      </section>
+      <section className='min-vh-100 background-color-2'>
+        <div></div>
+      </section>
+    </>
   )
 }
 

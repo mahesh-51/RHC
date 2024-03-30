@@ -2,9 +2,20 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className='min-vh-100'>
-      Home contain
-    </div>
+    <>
+      <section className='min-vh-100 background-color-1'>
+        <div></div>
+      </section>
+      <section className='min-vh-100 background-color-2'>
+        <div></div>
+      </section>
+      <section className='min-vh-100 background-color-1'>
+        <div></div>
+      </section>
+      <section className='min-vh-100 background-color-2'>
+        <div></div>
+      </section>
+    </>
   )
 }
 
