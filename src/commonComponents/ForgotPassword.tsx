@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -18,12 +18,13 @@ const ForgotPassword = (props: Tprops) => {
   };
 
   const handleSubmit = async (formik: any) => {
+    console.log("Submit", formik)
     let isFormValid = true;
     if (isFormValid) {
 
-      const data = {
-        "username": formik.username,
-      };
+      // const data = {
+      //   "username": formik.username,
+      // };
 
       try {
 

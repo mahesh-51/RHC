@@ -1,5 +1,4 @@
-import React from 'react'
-import { Button, Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
+import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { MenuItems } from '../types/menutpes';
 import LawLogo from "../assets/images/lawLogo.png";
 

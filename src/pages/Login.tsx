@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button, Card, CardBody, Col, Form, InputGroup, Row } from 'react-bootstrap'
 import ForgotPassword from '../commonComponents/ForgotPassword';
 import { useFormik } from "formik";
@@ -24,7 +24,7 @@ const Login = () => {
   });
 
   const handleSubmit = async (formik: any) => {
-
+    console.log(formik)
   };
 
 
