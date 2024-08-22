@@ -1,6 +1,7 @@
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { MenuItems } from '../types/menutpes';
 import LawLogo from "../assets/images/lawLogo.png";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const menuItems: MenuItems[] = [
@@ -30,16 +31,16 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto"> {/* To center the menu items, use mx-auto */}
               {menuItems.map((menuItem, index) => (
-                <Nav.Link key={index} href={menuItem.url} className='text-dark fs-5'>
+                <Link key={index} to={menuItem.url} className='text-dark fs-5 mx-3 hide-underlined'>
                   {menuItem.title}
-                </Nav.Link>
+                </Link>
               ))}
             </Nav>
-            <a href="/login">
+            <Link to="/login">
               <Button className='rounded-pill btn btn-dark px-4 shadow-lg'>
                 Login
               </Button>
-            </a>
+            </Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>

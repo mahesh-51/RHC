@@ -11,17 +11,17 @@ const Footer = () => {
         </Col>
         <Col className='d-flex justify-content-start' md={4}>
           <ul>
-            <li className='py-2'><a href="" className='text-light'>Home</a></li>
-            <li className='py-2'><a href="" className='text-light'>About us</a></li>
-            <li className='py-2'><a href="" className='text-light'>Services</a></li>
-            <li className='py-2'><a href="" className='text-light'>Contact us</a></li>
+            <li className='py-2'><Link to="" className='text-light hide-underlined'>Services</Link ></li>
+            <li className='py-2'><Link to="" className='text-light hide-underlined'>Home</Link ></li>
+            <li className='py-2'><Link to="" className='text-light hide-underlined'>About us</Link ></li>
+            <li className='py-2'><Link to="" className='text-light hide-underlined'>Contact us</Link ></li>
           </ul>
         </Col>
         <Col className='d-flex justify-content-start' md={4}>
           <div>
             <Row>
               <Col className='py-2'>  
-                <span className='fw-bolder'>Email:</span> <Link to="mailto:mahesh.mentem51@gmail.com" className='text-light' target='_blank'>Mahesh.mentem51@gmail.com</Link> 
+                <span className='fw-bolder'>Email:</span> <Link to="mailto:mahesh.mentem51@gmail.com" className='text-light hide-underlined' target='_blank'>Mahesh.mentem51@gmail.com</Link> 
               </Col>
             </Row>
             <Row>
