@@ -6,6 +6,7 @@ import AboutUs from "../pages/AboutUs";
 import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
+import Dashboard from "../admin/dashboard";
 
 const routes: RouteObject[] = [
   {
@@ -31,6 +32,10 @@ const routes: RouteObject[] = [
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
     ],
   },

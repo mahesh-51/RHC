@@ -3,10 +3,11 @@ import { Button, Card, CardBody, Col, Form, InputGroup, Row } from 'react-bootst
 import ForgotPassword from '../commonComponents/ForgotPassword';
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [isVisibleForgotPassword, setIsVisibleForgotPassword] = useState(false);
-
+  const navigate = useNavigate();
   const validationSchema = Yup.object().shape({
     username: Yup.string().required("Enter your username"),
     password: Yup.string().required("Enter your password"),
@@ -25,7 +26,7 @@ const Login = () => {
 
   const handleSubmit = async (formik: any) => {
     console.log(formik)
-    
+    navigate("/dashboard")
   };
 
 
