@@ -22,6 +22,29 @@ const Header = () => {
       url: "/contact-us"
     }
   ]
+
+  const AdminMenuItems: MenuItems[] = [
+    {
+      title: "DashBaord",
+      url: "/dashboard"
+    },
+    {
+      title: "Case Detail",
+      url: "/case-Detail"
+    },
+    {
+      title: "Court",
+      url: "/courts"
+    },
+    {
+      title: "Daily case",
+      url: "/cases"
+    },
+    {
+      title: "Upload Files",
+      url: "/upload-files"
+    }
+  ]
   return (
     <>
       <Navbar className="navbarContainer" expand="lg" sticky="top" bg="light">
@@ -30,7 +53,12 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto"> {/* To center the menu items, use mx-auto */}
-              {menuItems.map((menuItem, index) => (
+              {/* {menuItems.map((menuItem, index) => (
+                <Link key={index} to={menuItem.url} className='text-dark fs-5 mx-3 hide-underlined'>
+                  {menuItem.title}
+                </Link>
+              ))} */}
+              {AdminMenuItems.map((menuItem, index) => (
                 <Link key={index} to={menuItem.url} className='text-dark fs-5 mx-3 hide-underlined'>
                   {menuItem.title}
                 </Link>

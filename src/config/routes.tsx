@@ -7,6 +7,10 @@ import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Dashboard from "../admin/dashboard";
+import DailyCase from "../admin/dailtCases";
+import CaseDetail from "../admin/caseDetail";
+import Court from "../admin/court";
+import UploadFiles from "../admin/uploadFilles";
 
 const routes: RouteObject[] = [
   {
@@ -36,6 +40,22 @@ const routes: RouteObject[] = [
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/cases",
+        element: <DailyCase />,
+      },
+      {
+        path: "/case-detail",
+        element: <CaseDetail />,
+      },
+      {
+        path: "/courts",
+        element: <Court />,
+      },
+      {
+        path: "/upload-files",
+        element: <UploadFiles />,
       },
     ],
   },
