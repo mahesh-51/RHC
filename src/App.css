@@ -22,12 +22,12 @@
 }
 
 .primary-custom-button{
-    background-color: rgb(27, 27, 27);
-    border: #fcfcfc 1px solid;
+    background-color: rgb(27, 27, 27) !important;
+    border: #fcfcfc 1px solid !important;
 }
 
 .primary-custom-button:hover{
-    background-color: #fcfcfc;
+    background-color: #fcfcfc !important;
     border: #000000 1px solid !important;
-    color: black;
+    color: black !important;
 }
