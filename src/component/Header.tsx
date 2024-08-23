@@ -4,24 +4,24 @@ import LawLogo from "../assets/images/lawLogo.png";
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const menuItems: MenuItems[] = [
-    {
-      title: "Home",
-      url: "/"
-    },
-    {
-      title: "About us",
-      url: "/about"
-    },
-    {
-      title: "Services",
-      url: "/services"
-    },
-    {
-      title: "Contact us",
-      url: "/contact-us"
-    }
-  ]
+  // const menuItems: MenuItems[] = [
+  //   {
+  //     title: "Home",
+  //     url: "/"
+  //   },
+  //   {
+  //     title: "About us",
+  //     url: "/about"
+  //   },
+  //   {
+  //     title: "Services",
+  //     url: "/services"
+  //   },
+  //   {
+  //     title: "Contact us",
+  //     url: "/contact-us"
+  //   }
+  // ]
 
   const AdminMenuItems: MenuItems[] = [
     {

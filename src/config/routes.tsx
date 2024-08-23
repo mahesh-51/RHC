@@ -1,4 +1,3 @@
-import React from "react"
 import { createBrowserRouter, RouteObject } from "react-router-dom";
 import MasterLayout from "../component/MasterLayout";
 import Home from "../pages/Home";
