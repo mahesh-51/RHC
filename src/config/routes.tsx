@@ -9,8 +9,9 @@ import Dashboard from "../admin/dashboard";
 import DailyCase from "../admin/dailtCases";
 import CaseDetail from "../admin/caseDetail";
 import Court from "../admin/courts/court";
-import UploadFiles from "../admin/uploadFilles";
+import UploadFiles from "../admin/uploadFiles/uploadFilles";
 import AddCourt from "../admin/courts/add";
+import AddUploadFiles from "../admin/uploadFiles/add";
 
 const routes: RouteObject[] = [
   {
@@ -60,6 +61,10 @@ const routes: RouteObject[] = [
       {
         path: "/upload-files",
         element: <UploadFiles />,
+      },
+      {
+        path: "/add-upload-files",
+        element: <AddUploadFiles />,
       },
     ],
   },

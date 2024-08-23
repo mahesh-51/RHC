@@ -9,7 +9,7 @@ const AddCourt: React.FC = () => {
   const navigate = useNavigate();
   const validationSchema = Yup.object().shape({
     courtName: Yup.string().required("Enter your courtName"),
-    caseType: Yup.object().required("Enter your caseType"),
+    caseType: Yup.object().required("Select your caseType"),
   });
 
   const formik = useFormik({
