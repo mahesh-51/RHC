@@ -6,12 +6,13 @@ import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Dashboard from "../admin/dashboard";
-import DailyCase from "../admin/dailtCases";
+import DailyCase from "../admin/dailyCases/dailtCases";
 import CaseDetail from "../admin/caseDetail";
 import Court from "../admin/courts/court";
 import UploadFiles from "../admin/uploadFiles/uploadFilles";
 import AddCourt from "../admin/courts/add";
 import AddUploadFiles from "../admin/uploadFiles/add";
+import AddDailyCases from "../admin/dailyCases/add";
 
 const routes: RouteObject[] = [
   {
@@ -45,6 +46,10 @@ const routes: RouteObject[] = [
       {
         path: "/cases",
         element: <DailyCase />,
+      },
+      {
+        path: "/add-case",
+        element: <AddDailyCases />,
       },
       {
         path: "/case-detail",
