@@ -1,10 +1,18 @@
 import React from "react";
+import { Card, CardBody, Row } from "react-bootstrap";
 
 const DailyCase: React.FC = () => {
   return (
-    <div>
-        Welcome to DailyCase
-    </div>
+    <div className="p-3">
+    <h3 className="text-center display-6 py-2">Daily Cases</h3>
+    <Card className='shadow py-5'>
+      <CardBody>
+        <Row className="" >
+          
+        </Row>
+      </CardBody>
+    </Card>
+  </div>
   );
 };
 

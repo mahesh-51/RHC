@@ -20,3 +20,14 @@
 .hide-underlined {
     text-decoration: none;
 }
+
+.primary-custom-button{
+    background-color: rgb(27, 27, 27);
+    border: #fcfcfc 1px solid;
+}
+
+.primary-custom-button:hover{
+    background-color: #fcfcfc;
+    border: #000000 1px solid !important;
+    color: black;
+}

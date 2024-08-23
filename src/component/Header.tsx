@@ -1,51 +1,11 @@
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
-import { MenuItems } from '../types/menutpes';
 import LawLogo from "../assets/images/lawLogo.png";
 import { Link } from 'react-router-dom';
+import { AdminMenuItems } from '../config/Constant';
 
 const Header = () => {
-  // const menuItems: MenuItems[] = [
-  //   {
-  //     title: "Home",
-  //     url: "/"
-  //   },
-  //   {
-  //     title: "About us",
-  //     url: "/about"
-  //   },
-  //   {
-  //     title: "Services",
-  //     url: "/services"
-  //   },
-  //   {
-  //     title: "Contact us",
-  //     url: "/contact-us"
-  //   }
-  // ]
 
-  const AdminMenuItems: MenuItems[] = [
-    {
-      title: "DashBaord",
-      url: "/dashboard"
-    },
-    {
-      title: "Case Detail",
-      url: "/case-Detail"
-    },
-    {
-      title: "Court",
-      url: "/courts"
-    },
-    {
-      title: "Daily case",
-      url: "/cases"
-    },
-    {
-      title: "Upload Files",
-      url: "/upload-files"
-    }
-  ]
-  return (
+return (
     <>
       <Navbar className="navbarContainer" expand="lg" sticky="top" bg="light">
         <Container fluid="xxl">

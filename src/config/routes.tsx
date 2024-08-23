@@ -8,8 +8,9 @@ import Login from "../pages/Login";
 import Dashboard from "../admin/dashboard";
 import DailyCase from "../admin/dailtCases";
 import CaseDetail from "../admin/caseDetail";
-import Court from "../admin/court";
+import Court from "../admin/courts/court";
 import UploadFiles from "../admin/uploadFilles";
+import AddCourt from "../admin/courts/add";
 
 const routes: RouteObject[] = [
   {
@@ -49,8 +50,12 @@ const routes: RouteObject[] = [
         element: <CaseDetail />,
       },
       {
-        path: "/courts",
+        path: "/court-list",
         element: <Court />,
+      },
+      {
+        path: "/add-court",
+        element: <AddCourt />,
       },
       {
         path: "/upload-files",
