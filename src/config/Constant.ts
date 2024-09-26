@@ -48,3 +48,5 @@ export const AdminMenuItems: MenuItems[] = [
         url: "/upload-files"
     }
 ]
+
+export const AUTH = true;
