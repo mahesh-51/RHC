@@ -13,10 +13,17 @@ import UploadFiles from "../admin/uploadFiles/uploadFilles";
 import AddCourt from "../admin/courts/add";
 import AddUploadFiles from "../admin/uploadFiles/add";
 import AddDailyCases from "../admin/dailyCases/add";
+import AdminPanelLayout from "../admin/layout";
+import ProtectedRoute from "../auth/protectedRoute";
 
 const routes: RouteObject[] = [
   {
     path: "/",
+    // element: (
+    //   <ProtectedRoute>
+    //     <AdminPanelLayout />
+    //   </ProtectedRoute>
+    // ),
     element: <MasterLayout />,
     children: [
       {
