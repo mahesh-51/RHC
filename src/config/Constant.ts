@@ -50,3 +50,5 @@ export const AdminMenuItems: MenuItems[] = [
 ]
 
 export const AUTH = true;
+
+export const PASSWORD_MAXLENGTH = 8

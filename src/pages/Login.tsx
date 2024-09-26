@@ -1,121 +1,125 @@
-import { useState } from 'react'
-import { Button, Card, CardBody, Col, Form, InputGroup, Row } from 'react-bootstrap'
-import ForgotPassword from '../commonComponents/ForgotPassword';
+import { Input, Button } from "antd";
 import { useFormik } from "formik";
+import { Link, useNavigate } from "react-router-dom";
+import { IAuthBody } from "../types/authTypes";
+import { Toaster } from 'react-hot-toast';
 import * as Yup from "yup";
-import { useNavigate } from 'react-router-dom';
+import "../loginForm.css";
+import { PASSWORD_MAXLENGTH } from "../config/Constant";
+import { customError } from "../config/commonFunction";
 
-const Login = () => {
-  const [isVisibleForgotPassword, setIsVisibleForgotPassword] = useState(false);
+const LoginPage = () => {
   const navigate = useNavigate();
-  const validationSchema = Yup.object().shape({
-    username: Yup.string().required("Enter your username"),
-    password: Yup.string().required("Enter your password"),
+
+  const handleSubmit = async (values: IAuthBody) => {
+    console.log("Submitting form", values);
+    try {
+      const request = {
+        email: values.email,
+        password: values.password,
+      };
+
+    } catch (error: any) {
+      customError("Login unsuccessful. Please try again.");
+    }
+  };
+
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    password: Yup.string()
+      .trim()
+      .required("Password is required")
+      .max(PASSWORD_MAXLENGTH),
   });
 
   const formik = useFormik({
     initialValues: {
-      username: "",
+      email: "",
       password: "",
     },
     validationSchema,
-    onSubmit: async () => {
-      await handleSubmit(formik.values)
-    },
+    onSubmit: (values) => handleSubmit(values),
   });
-
-  const handleSubmit = async (formik: any) => {
-    console.log(formik)
-    navigate("/dashboard")
-  };
-
 
   return (
     <>
-      <ForgotPassword
-        visible={isVisibleForgotPassword}
-        cancelModal={() => setIsVisibleForgotPassword(false)}
-      />
-
-      <div className='p-3'>
-        {/* <div className='pb-3 d-flex justify-content-end'>
-          <a href="/">
-            <Button className='rounded-pill btn btn-dark px-4 shadow-lg'>
-              Back
+      <section className="login-container">
+        <form className="login-card" onSubmit={formik.handleSubmit}>
+          <div className="login-content d-flex flex-column justify-content-start align-self-start gap-3">
+            <h2 className="login-title">Login</h2>
+            <div className="form-group w-100 d-flex flex-column justify-content-start align-items-start">
+              <label htmlFor="email" className="form-label">
+                Email <span className="required">*</span>
+              </label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+                className={`form-input ${formik.touched.email && formik.errors.email
+                    ? "input-error"
+                    : ""
+                  }`}
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <div className="error-message">{formik.errors.email}</div>
+              ) : null}
+            </div>
+            <div className="form-group w-100 d-flex flex-column justify-content-start align-items-start">
+              <label htmlFor="password" className="form-label">
+                Password <span className="required">*</span>
+              </label>
+              <div className="password-wrapper w-100">
+                <Input.Password
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.password}
+                  className={`form-input w-100 ${formik.touched.password && formik.errors.password
+                      ? "input-error"
+                      : ""
+                    }`}
+                />
+              </div>
+              {formik.touched.password && formik.errors.password ? (
+                <div className="error-message">
+                  {formik.errors.password.split("\n").map((msg, index) => (
+                    <div
+                      className=" d-flex flex-column justify-content-start align-items-start"
+                      key={index}
+                    >
+                      {msg}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+            <div className="forgot-password-link">
+              <Link to="#" className=" text-black text-decoration-none ">
+                Forgot Password
+              </Link>
+            </div>
+            <Button
+              type="primary"
+              block
+              htmlType="submit"
+              className="login-button"
+            >
+              Login
             </Button>
-          </a>
-        </div> */}
-        <p className='text-center display-6 py-3'>Login Form</p>
-          <Card className='shadow py-5'>
-            <CardBody>
-              <Row>
-                <Col md={12}>
-                  <Form onSubmit={formik.handleSubmit}>
-                    <Row className='p-2 d-flex justify-content-center'>
-                      <Col md={4}>
-                        <Form.Label className="d-flex" htmlFor="username">
-                          {"Username"}<span className="text-danger">*</span>
-                        </Form.Label>
-                        <InputGroup className="d-flex">
-                          <Form.Control
-                            name="username"
-                            type="text"
-                            id="username"
-                            value={formik.values.username}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            placeholder={"Enter Username"}
-                          />
-                        </InputGroup>
-                        {formik.touched.username && formik.errors.username &&
-                          <div className='error-message'>{formik.errors.username}</div>}
-                      </Col>
-                    </Row>
-                    <Row className='p-2 d-flex justify-content-center'>
-                      <Col md={4}>
-                        <Form.Label className="d-flex" htmlFor="password">
-                          {"Password"}<span className="text-danger">*</span>
-                        </Form.Label>
-                        <InputGroup className="d-flex">
-                          <Form.Control
-                            name="password"
-                            type="password"
-                            id="password"
-                            value={formik.values.password}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            placeholder={"Enter password"}
-                          />
-                        </InputGroup>
-                        {formik.touched.password && formik.errors.password &&
-                          <div className='error-message'>{formik.errors.password}</div>}
-                      </Col>
-                    </Row>
-                    <Row className='px-2 d-flex justify-content-center'>
-                      <Col md={4} className='text-end'>
-                        <p className='m-0 link' onClick={() => setIsVisibleForgotPassword(true)}>Forgot password ?</p>
-                      </Col>
-                    </Row>
-                    <Row className='p-2 d-flex justify-content-center'>
-                      <Col md={4} className='d-flex justify-content-center'>
-                        <Button type='submit' className='rounded-pill btn-primary px-4 w-100 shadow-lg'>
-                          Login
-                        </Button>
-                      </Col>
-                    </Row>
-                    <Row className='px-2 py-2 d-flex justify-content-center'>
-                      <Col md={4} className='text-start'>
-                        <a href="#">Reset Password</a>
-                      </Col>
-                    </Row>
-                  </Form>
-                </Col>
-              </Row>
-            </CardBody>
-          </Card>
-      </div>
+          </div>
+        </form>
+      </section>
+      <Toaster />
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default LoginPage;

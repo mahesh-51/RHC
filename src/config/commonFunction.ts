@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import toast from 'react-hot-toast';
 
 export function dateFormatForDisplay(date: any, dateFormat: string) {
   try {
@@ -11,3 +12,15 @@ export function dateFormatForDisplay(date: any, dateFormat: string) {
     console.log("error", error)
   }
 }
+
+export const success = (message: string) => {
+  toast.success(message);
+};
+
+export const customError = (message: string) => {
+  toast.error(message);
+};
+
+export const info = (message: string) => {
+  toast(message, { icon: 'ℹ️' });
+};
