@@ -19,6 +19,8 @@ const LoginPage = () => {
         password: values.password,
       };
 
+      navigate("/admin/dashboard")
+
     } catch (error: any) {
       customError("Login unsuccessful. Please try again.");
     }

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const DailyCase: React.FC = () => {
   const navigate = useNavigate()
   const handleAddButtonClick = () =>{
-    navigate("/add-case");
+    navigate("/admin/add-case");
   }
   return (
     <div className="p-3">

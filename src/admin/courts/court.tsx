@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Court: React.FC = () => {
   const navigate = useNavigate()
   const handleAddButtonClick = () =>{
-    navigate("/add-court");
+    navigate("/admin/add-court");
   }
   return (
     <div className="p-3">

@@ -37,18 +37,18 @@ export const AdminMenuItems: MenuItems[] = [
     },
     {
         title: "Court",
-        url: "/court-list"
+        url: "/admin/court-list"
     },
     {
         title: "Daily case",
-        url: "/cases"
+        url: "//admin/cases"
     },
     {
         title: "Upload Files",
-        url: "/upload-files"
+        url: "/admin/upload-files"
     }
 ]
 
-export const AUTH = true;
+export const AUTH = false;
 
 export const PASSWORD_MAXLENGTH = 8

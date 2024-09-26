@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const UploadFiles: React.FC = () => {
   const navigate = useNavigate()
   const handleAddButtonClick = () =>{
-    navigate("/add-upload-files");
+    navigate("/admin/add-upload-files");
   }
   return (
     <div className="p-3">

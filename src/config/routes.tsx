@@ -47,35 +47,43 @@ const routes: RouteObject[] = [
         element: <Login />,
       },
       {
+        path: "/admin/dashboard",
+        element: (
+          <ProtectedRoute>
+            <AdminPanelLayout />
+          </ProtectedRoute>
+        ),
+      },
+      {
         path: "/dashboard",
         element: <Dashboard />,
       },
       {
-        path: "/cases",
+        path: "/admin/cases",
         element: <DailyCase />,
       },
       {
-        path: "/add-case",
+        path: "/admin/add-case",
         element: <AddDailyCases />,
       },
       {
-        path: "/case-detail",
+        path: "/admin/case-detail",
         element: <CaseDetail />,
       },
       {
-        path: "/court-list",
+        path: "/admin/court-list",
         element: <Court />,
       },
       {
-        path: "/add-court",
+        path: "/admin/add-court",
         element: <AddCourt />,
       },
       {
-        path: "/upload-files",
+        path: "/admin/upload-files",
         element: <UploadFiles />,
       },
       {
-        path: "/add-upload-files",
+        path: "/admin/add-upload-files",
         element: <AddUploadFiles />,
       },
     ],
