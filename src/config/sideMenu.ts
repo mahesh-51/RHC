@@ -14,8 +14,32 @@ import { TbPrompt } from "react-icons/tb";
 export const sideNavItems: ISideNavType[] = [
   {
     key: "dashboard",
-    url: "/",
+    url: "/admin/dashboard",
     label: "Dashboard", 
     icon: DashboardOutlined,
-  }
+  },
+  {
+    key: "cases",
+    url: "/admin/cases",
+    label: "Cases", 
+    icon: DashboardOutlined,
+  },
+  {
+    key: "case-detail",
+    url: "/admin/case-detail",
+    label: "Case Deatil", 
+    icon: DashboardOutlined,
+  },
+  {
+    key: "court-list",
+    url: "/admin/court-list",
+    label: "Court List", 
+    icon: DashboardOutlined,
+  },
+  {
+    key: "upload-files",
+    url: "/admin/upload-files",
+    label: "Upload", 
+    icon: DashboardOutlined,
+  },
 ];
